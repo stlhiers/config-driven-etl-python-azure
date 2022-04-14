@@ -1,5 +1,5 @@
 # Python Configuration-driven ETL Scripts for Azure Environment
-This project is a proof of concept meant to replicate in python the general ETL patterns currently leveraged in Azure Data Factory pipelines. The goal is to create confi- or metadata-driven ETL scripts in python.
+This project is a proof of concept meant to replicate in python the general ETL patterns currently leveraged in Azure Data Factory pipelines (thank you Tim Donovan for the pattern design!). My goal was to create confi- or metadata-driven ETL scripts in python.
 
 This has been a learning experience for me. I'd love feedback and any suggestions. I tried to apply OOP principles to the project, but I'm still learning! Ideas for how an ETL process can implement OOP is especially appreciated.
 
@@ -54,15 +54,18 @@ This module will be expanded to include more api configuration types as the need
 This module is utilized by other scripts in this program to interact with the Azure Data Lake Gen2, including reading & writing files and getting file counts.
 
 ## SQL DDL files
-SQL scripts are provided in this project to create the tables, stored procedures, and functions used throughout the ETL load process. Thanks to Tim Donovan for procedure and function designs and permission to include them in this project.
+SQL scripts are provided in this project to create the tables, stored procedures, and functions used throughout the ETL load process. Thanks to Tim Donovan for the stored procedure and function designs and permission to include them in this project.
 
 ## Azure Data Lake Gen2
 The scripts assume the following general folder structure in the data lake:
-raw
-  L source_a
-    L endpoint_a
-    L endpoint_b
-    L api_config.csv
-  L source_b
-    L endpoing_a
-    L api_config.csv
+
+    .
+    └── raw
+       ├── source_a 
+       │   ├── endpoint_a
+       │   ├── endpoint_b
+       │   └── api_config.csv
+       └── source_b
+       │   ├── endpoint_a
+       │   └── api_config.csv       
+       └── ...
